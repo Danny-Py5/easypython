@@ -6,6 +6,14 @@
     padding: 0;
 }
 
+/* Animate all elements onload */
+img, h1, h2, h3, h4, h5, h6, p, li, a{
+    animation: slideFadeIn 1s linear both;
+}
+img{
+    animation: rotateImg 1s linear both;
+}
+
 
 :root{
     --color: rgb(27, 27, 27);
@@ -67,8 +75,9 @@ p, li{
 p, a, li{
     font-size: var(--font-size); 
     color: var(--color);
-    transition: color var(--transition-duration) ;  
+    transition: color var(--transition-duration);  
 }
+
 
 a{
     text-decoration: none;
@@ -327,5 +336,26 @@ header nav ul li{
     to{
         opacity: 1;
         padding-bottom: 0;
+    }
+}
+@keyframes slideFadeIn {
+    from {
+        opacity: .3;
+        transform: translate(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes rotateImg {
+    from {
+        transform: rotate(90deg);
+        scale: 1.5;
+    } 
+    to {
+        transform: rotate(0);
+        scale: 1;
     }
 }
